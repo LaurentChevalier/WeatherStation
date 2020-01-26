@@ -196,7 +196,7 @@ void setup() {
     Serial.println("Couldn't find RTC");
     while (1);
   }
-  rtc.adjust(DateTime(2019, 1, 26, 16, 34, 0));
+  //rtc.adjust(DateTime(2017, 9, 30, 17, 27, 0));
 
   if (! rtc.isrunning()) {
     Serial.println("RTC is NOT running!");
@@ -353,7 +353,7 @@ void drawData() {
 
   //Print Battery Voltage
   tft.setCursor(100, 190);
-  tft.print(myData_Outdoor.BatteryVoltage); tft.print("V");
+  tft.print(myData_Outdoor.BatteryVoltage); tft.print("mV");
 
   //*************************************************************************************//
   //Greenhouse
@@ -374,7 +374,7 @@ void drawData() {
 
   //Print Battery Voltage
   tft.setCursor(200, 190);
-  tft.print(myData_Greenhouse.BatteryVoltage); tft.print("V");
+  tft.print(myData_Greenhouse.BatteryVoltage); tft.print("mV");
 }
 
 long readVcc() {
