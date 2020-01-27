@@ -153,7 +153,7 @@ float dataReceived;  // Data that will be received from the transmitter
 struct dataStruct_outdoor {
   int channel;
   float ReelPressure, ReelHumidity, ReelTemperature;
-  long BatteryVoltage;
+  float BatteryVoltage;
 } myData, myData_Outdoor, myData_Greenhouse; // This can be accessed in the form:  myData.Xposition  etc.
 
 struct dataStruct_indoor {
@@ -196,7 +196,7 @@ void setup() {
     Serial.println("Couldn't find RTC");
     while (1);
   }
-  rtc.adjust(DateTime(2019, 1, 26, 16, 34, 0));
+  //rtc.adjust(DateTime(2019, 1, 26, 17, 30, 0));
 
   if (! rtc.isrunning()) {
     Serial.println("RTC is NOT running!");
